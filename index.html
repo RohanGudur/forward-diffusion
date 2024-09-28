@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion Process Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <h1>The Forward Diffusion Process</h1>
+        <p>
+            The forward diffusion process is a technique used in diffusion models where noise is gradually added to an image at each step. 
+            This helps the model learn to reverse this process during training to generate new images. Explore the steps below to visualize how noise increases with each step.
+        </p>
+    </section>
+
+    <!-- Slider Section -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <input type="range" min="0" max="500" value="0" step="10" class="slider" id="slider" oninput="updateImage()">
+            <p class="caption">Step: <span id="stepLabel">0</span></p>
+        </div>
+
+        <img id="diffusionImage" src="images/step_0.png" alt="Diffusion Step">
+    </section>
+
+    <!-- Additional Information Section -->
+    <section class="info-section">
+        <h2>Understanding the Process</h2>
+        <p>
+            As you move the slider above, you'll notice the gradual increase in noise, simulating the forward diffusion process. 
+            This noise addition helps in training deep learning models to reverse the noise, ultimately generating high-quality images from random noise.
+        </p>
+        <p>
+            In practice, this process is key for generative models, including diffusion models that aim to create high-quality, realistic images from scratch.
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
