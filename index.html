@@ -6,6 +6,8 @@
     <title>Diffusion Process Visualization</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Preload critical assets for better performance -->
+    <link rel="preload" href="images/image_step_0.png" as="image">
 </head>
 <body>
 
@@ -35,14 +37,14 @@
             <p class="caption">Step: <span id="stepLabel">0</span></p>
         </div>
 
-        <img id="diffusionImage" src="images/image_step_0.png" alt="Diffusion Step">
+        <img id="diffusionImage" src="images/image_step_0.png" alt="Image at Step 0">
     </section>
 
     <!-- Additional Information Section -->
     <section class="info-section">
         <h2>Understanding the Process</h2>
         <p>
-            As you move the slider above, you'll notice the gradual increase in noise, simulating the forward diffusion process. 
+            As the slider moves above, you'll notice the gradual increase in noise, simulating the forward diffusion process. 
             This noise addition helps in training deep learning models to reverse the noise, ultimately generating high-quality images from random noise.
         </p>
         <p>

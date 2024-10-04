@@ -22,21 +22,24 @@ function startAutoScroll() {
     document.getElementById('slider').disabled = true; // Disable the slider during auto scroll
 
     autoScrollInterval = setInterval(() => {
-        if (step <= 500) {
-            updateImage();
+        if (step < 500) {
             step += 10; // Increment step
+            updateImage();
         } else {
-            stopScroll(); // Stop if we reach the end
+            stopScroll(); // Stop if we reach the last step
         }
     }, 500); // Change image every 500ms
 }
 
 function stopScroll() {
     clearInterval(autoScrollInterval); // Stop the interval
-    step = 0; // Reset step to 0
-    updateImage(); // Update image to show the first step
-
     document.getElementById('stopButton').style.display = 'none'; // Hide stop button
     document.getElementById('startButton').style.display = 'inline-block'; // Show start button again
     document.getElementById('slider').disabled = false; // Re-enable the slider
+}
+
+// Optional reset function, in case needed
+function resetScroll() {
+    step = 0; // Reset step to 0
+    updateImage(); // Show the first image again
 }
